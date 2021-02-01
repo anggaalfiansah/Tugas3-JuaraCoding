@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Soal from './Soal';
 
 class SoalGenerator extends Component {
     constructor(props) {
@@ -61,6 +60,8 @@ class SoalGenerator extends Component {
             soal: soalJadi
         })
         console.log(this.state.soal)
+        
+        this.props.ambildata(this.state.soal)
 
     }
     // mengambil data soal checklist
@@ -88,6 +89,8 @@ class SoalGenerator extends Component {
             soal: soalJadi
         })
         console.log(this.state.soal)
+        
+        this.props.ambildata(this.state.soal)
     }
 
     // mengambil data soal textarea
@@ -111,6 +114,7 @@ class SoalGenerator extends Component {
         this.setState({
             soal: soalJadi
         })
+        this.props.ambildata(this.state.soal)
     }
 
     // Menampilkan Form Input Soal Sesuai Tipe
@@ -193,34 +197,26 @@ class SoalGenerator extends Component {
     }
 
     render() {
-        let soal = this.state.soal
         return (
             <div>
-                <div className="container-fluid px-3 py-3">
+                <div>
+                    <h3 className="text-center mb-3 text-uppercase">Input Soal</h3>
+                    {/* Pilih tipe Soal */}
                     <div className="row">
-                        <div className="col-md-6 px-2 py-3 border border-secondary bg-light ">
-                            <Soal data={soal} />
-                        </div>
-                        <div className="col-md-6 px-2 py-3 border border-secondary bg-light">
-                            <h3 className="text-center mb-3 text-uppercase">Input Soal</h3>
-                            {/* Pilih tipe Soal */}
-                            <div className="row">
-                                <div className="col-4">
-                                    Type Soal :
+                        <div className="col-4">
+                            Type Soal :
                                 </div>
-                                <div className="col-8">
-                                    <select className="form-select" onChange={this.getTypeSoal}>
-                                        <option>Pilih Tipe Soal</option>
-                                        <option>Radio</option>
-                                        <option>Check List</option>
-                                        <option>Textarea</option>
-                                    </select>
-                                </div>
-                            </div>
-                            {/* Form Input */}
-                            {this.formSoal(this.state.typeSoal)}
+                        <div className="col-8">
+                            <select className="form-select" onChange={this.getTypeSoal}>
+                                <option>Pilih Tipe Soal</option>
+                                <option>Radio</option>
+                                <option>Check List</option>
+                                <option>Textarea</option>
+                            </select>
                         </div>
                     </div>
+                    {/* Form Input */}
+                    {this.formSoal(this.state.typeSoal)}
                 </div>
             </div>
         );

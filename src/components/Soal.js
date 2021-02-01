@@ -8,7 +8,6 @@ class Soal extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            soal: this.props.data,
             jawabanSoal: []
         }
     }
@@ -51,15 +50,13 @@ class Soal extends Component {
     }
 
     render() {
-        let soal = this.state.soal
-        console.log(soal)
         return (
             <div>
                 <div>
                     <div id="soal" style={{minHeight: '600px'}}>
                         {/* Menampilkan Soal */}
                         {/* Untuk pakai SoalData.js silahkan ganti "this.state.soal" ke "SoalData". dan jangan lupa aktifkan import SoalData*/}
-                        {soal.map((data, key) => {
+                        {this.props.data.map((data, key) => {
                             return (
                                 <div className="pt-2" id={key} key={key}>
                                     <span>{key + 1}. </span><label className="form-label">{data.soal}</label>
@@ -73,7 +70,7 @@ class Soal extends Component {
                     </div>
                     <div>
                         {/* Jangan Lupa this.state.soal juga diganti "SoalData" jika ingin pakai SoalData.js sebagai basis data*/}
-                        <Score dataKoreksi={this.state.jawabanSoal} dataSoal={soal} />
+                        <Score dataKoreksi={this.state.jawabanSoal} dataSoal={this.props.data} />
                     </div>
                 </div>
             </div>
