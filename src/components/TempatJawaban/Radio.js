@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class radio extends Component {
+class Radio extends Component {
     constructor(props) {
         super(props);
         this.state = { jawaban: "", disabled: false, jawabKoreksi: "" };
@@ -74,4 +74,4 @@ class radio extends Component {
     }
 }
 
-export default radio;
+export default Radio;

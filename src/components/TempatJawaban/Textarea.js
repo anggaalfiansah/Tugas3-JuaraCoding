@@ -1,7 +1,6 @@
-/* eslint-disable no-lone-blocks */
 import React, { Component } from 'react';
 
-class essay extends Component {
+class Textarea extends Component {
     constructor(props) {
         super(props);
         this.state = { jawaban: "", disabled: false, hidden: false, jawabanVisibility: true };
@@ -15,7 +14,7 @@ class essay extends Component {
     addJawaban = (a) => {
         let jawab = a;
         let nomor = this.props.nomor;
-        let benar = `Jawaban Yang benar Adalah ${this.props.jawab}`;
+        let benar = `${this.props.jawab}`;
         let boolKoreksi = ""
         if (jawab.toLowerCase() === this.props.jawab.toLowerCase()) {
             boolKoreksi = "Benar"
@@ -45,8 +44,7 @@ class essay extends Component {
     submitButton = () => {
         let fn = this.inputText
         this.setState({ jawaban: fn, disabled: true, hidden: true, jawabanVisibility: false })
-        console.log(this.state.jawaban)
-        {this.addJawaban(fn)}
+        this.addJawaban(fn)
     }
 
     render() {
@@ -63,4 +61,4 @@ class essay extends Component {
     }
 }
 
-export default essay;
+export default Textarea;

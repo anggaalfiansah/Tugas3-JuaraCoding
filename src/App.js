@@ -15,17 +15,26 @@ class App extends Component {
     this.setState({ data: data })
   }
 
+  update = (data) => {
+    this.setState({data : data})
+  }
+
   render() {
     console.log(this.state.data)
     return (
-      <div className="container-fluid px-4 my-3">
+      <div className="container-fluid my-3">
+        <div className="bg-light">
         <div className="row">
-          <div className="col-md-6 px-2 py-3 border border-secondary bg-light ">
-            <Soal data={this.state.data} />
+          <div className="col-md-6 px-3 py-3">
+            <div className="px-4 py-3 border border-secondary" style={{minHeight : 650}}>
+            <Soal data={this.state.data} updateData={this.update}/></div>
           </div>
-          <div className="col-md-6 px-2 py-3 border border-secondary bg-light ">
-            <SoalGenerator ambildata={this.ambilData} />
+          <div className="col-md-6 px-3 py-3">
+            <div className="px-4 py-3 border border-secondary" style={{minHeight : 650}}>
+            <SoalGenerator ambildata={this.ambilData}/>
+            </div>
           </div>
+        </div>
         </div>
       </div>
     );

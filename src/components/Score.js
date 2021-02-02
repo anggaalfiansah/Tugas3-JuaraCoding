@@ -67,24 +67,44 @@ class Score extends Component {
                     </div>
                 </div>
                 <div hidden={this.state.hasilVisibility}>
-                    <h2 className="text-center mb-3 fs-1">BERIKUT INI ADALAH SCORE ANDA</h2>
+                    <h5 className="text-center mb-3">BERIKUT INI ADALAH SCORE ANDA</h5>
                     <table className="table table-success table-bordered">
                         <thead>
                             <tr>
-                                <th className="text-center text-uppercase" scope="col">Belum Dijawab</th>
-                                <th className="text-center text-uppercase" scope="col">Sudah Dijawab</th>
-                                <th className="text-center text-uppercase" scope="col">Jawaban Salah</th>
-                                <th className="text-center text-uppercase" scope="col">Jawaban Benar</th>
+                                <th className="text-center text-uppercase table-success" scope="col">Sudah Dijawab</th>
+                                <th className="text-center text-uppercase table-danger" scope="col">Belum Dijawab</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td className="text-center fs-1 fw-bold table-success text-success">{this.state.soalSudahDijawab}</td>
+                                <td className="text-center fs-1 fw-bold table-danger text-danger">{this.state.soalBelumDijawab}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table className="table table-success table-bordered">
+                        <thead>
+                            <tr>
+                                <th className="text-center text-uppercase table-success" scope="col">Jawaban Benar</th>
+                                <th className="text-center text-uppercase table-danger" scope="col">Jawaban Salah</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td className="text-center fs-1 fw-bold table-success text-success" >{this.state.jawabanBenar}</td>
+                                <td className="text-center fs-1 fw-bold table-danger text-danger">{this.state.jawabanSalah}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table className="table table-primary table-bordered">
+                        <thead>
+                            <tr>
                                 <th className="text-center text-uppercase" scope="col">Score</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td className="text-center fs-1 fw-bold">{this.state.soalBelumDijawab}</td>
-                                <td className="text-center fs-1 fw-bold">{this.state.soalSudahDijawab}</td>
-                                <td className="text-center fs-1 fw-bold">{this.state.jawabanSalah}</td>
-                                <td className="text-center fs-1 fw-bold">{this.state.jawabanBenar}</td>
-                                <td className="text-center fs-1 fw-bold">{this.state.score}</td>
+                                <td className="text-center fs-1 fw-bold text-primary">{this.state.score}</td>
                             </tr>
                         </tbody>
                     </table>
