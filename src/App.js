@@ -20,7 +20,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.data)
     return (
       <div className="container-fluid my-3">
         <div className="bg-light">

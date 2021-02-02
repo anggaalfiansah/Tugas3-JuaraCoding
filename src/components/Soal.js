@@ -51,10 +51,16 @@ class Soal extends Component {
         }
     }
     deleteSoal = (e) => {
+        // Update Soal
         let data = this.props.data
         let index = e.target.id
         data.splice(index, 1)
         this.props.updateData(data)
+        
+        // Update Jawaban
+        let jawaban = this.state.jawabanSoal
+        jawaban.splice(index,1)
+        this.setState({jawabanSoal : jawaban})
     }
     updateSoal = (update, index) => {
         let data = this.props.data

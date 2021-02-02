@@ -11,7 +11,7 @@ class TextareaInput extends Component {
     }
     getValueByName =(e) => {
         let name = e.target.name
-        this.setState({[name] : e.target.value})
+        this.setState({[(name)] : e.target.value})
     }
     getSoalTextarea = () => {
         this.props.ambilData(this.state)
